@@ -1,0 +1,14 @@
+# lead to much slimmer image comparing to node image itself
+FROM node:alpine
+
+# Put all files under usr/app folder
+WORKDIR /usr/app
+
+# Copy package.json first to aviod reinstall process
+COPY ./package.json ./
+RUN npm install
+
+# Copy rest of the files
+COPY ./ ./ 
+
+CMD ["npm", "run", "dev"]

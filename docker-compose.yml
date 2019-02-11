@@ -1,0 +1,13 @@
+# Commdand to start up docker-compose file: docker-compose up 
+version: 3
+services:
+  web:
+    build:
+      context: . # inclues all files in current dir
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    # enable automatic detection of file changes
+    vloumes:
+      - /usr/app/node_modules # reference to node_modules under usr/app in the container, assume no node_modules folder locally
+      - .:/usr/app # reference to all files locally

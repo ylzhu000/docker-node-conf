@@ -1,2 +1,2 @@
 # docker-node-conf
-General configuration for node project
+General docker configuration for node project in development and production mode.
